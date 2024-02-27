@@ -11,6 +11,6 @@ public class Endpoints {
 
     @GetMapping("/hello")
     public String init() {
-        return "Hello World";
+        return "Hello World!";
     }
 }
