@@ -1,39 +1,42 @@
 package com.example.awsservice.models;
 
-/*
-import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.MongoId;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 
-@Document(collection = "books")
-public class Book {
+@Entity
+public class BookSql {
 
-    @MongoId
-    private String id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String title;
     private String author;
 
-    public Book() {
+    public BookSql() {
     }
 
-    public Book(String id, String title, String author) {
+    public BookSql(String title, String author) {
+        this.title = title;
+        this.author = author;
+    }
+    public BookSql(Long id, String title, String author) {
         this.id = id;
         this.title = title;
         this.author = author;
     }
 
-    public Book(String title, String author) {
-        this.title = title;
-        this.author = author;
-    }
-
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
+
 
     public String getTitle() {
         return title;
@@ -51,5 +54,3 @@ public class Book {
         this.author = author;
     }
 }
-
- */
