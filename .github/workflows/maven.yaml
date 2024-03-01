@@ -1,0 +1,22 @@
+name: maven
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v3
+        with:
+          java-version: '21'
+
+      - name: Build with Maven
+        run: mvn -B package --file pom.xml
+
+      - name: Test Database Connection
+        run: mvn test -Dspring.datasource.url=jdbc:mysql://Beanstalk-spring-crud-env.eba-diuswvnf.eu-north-1.elasticbeanstalk.com//aws-sql-db -Dspring.datasource.username=root -Dspring.datasource.password=Kerimadmin
