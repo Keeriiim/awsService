@@ -1,4 +1,4 @@
-package com.example.awsservice.Repository;
+package com.example.awsservice.repository;
 
 /*
 import com.example.awsservice.models.Book;
