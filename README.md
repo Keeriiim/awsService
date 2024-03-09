@@ -96,12 +96,42 @@ Below are the endpoints available with example code:
 ---
 
 
-
-
-
-
 # Additional info
+- Backend: Java 17 maven Spring Boot
+- Database: MySql via AWS RDS
+- CI/CD: GitHub Actions, AWS CodePipeline, CodeBuild
+- Hosting: AWS Elastic Beanstalk
+  
 # CI-CD
 
 - Github actions
   Ga was used to test the build function with Github, to see the yaml file see .github/workflows/maven.yaml
+
+- Codebuilder
+  Builds the code based on my specificaition on AWS.
+  Buildspec:
+  ```yaml
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto21
+  pre_build:
+    commands:
+      - echo Nothing to do in the pre_build phase...
+  build:
+    commands:
+      - echo Build started on 'date'
+      - mvn install
+  post_build:
+    commands:
+      - echo Build completed on 'date'
+artifacts:
+  files:
+    - target/webservice-app.jar
+  discard-paths: yes  
+  ```
+
+- CodePipeLine
+  Controlls the source which, gets the build from codebuilder and deploys the project to AWS.
