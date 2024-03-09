@@ -94,3 +94,14 @@ Below are the endpoints available with example code:
 
 
 ---
+
+
+
+
+
+
+# Additional info
+# CI-CD
+
+- Github actions
+  Ga was used to test the build function with Github, to see the yaml file see .github/workflows/maven.yaml
