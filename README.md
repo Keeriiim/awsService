@@ -109,8 +109,8 @@ Below are the endpoints available with example code:
 
 - Codebuilder
   Builds the code based on my specificaition on AWS.
-  Buildspec:
-  ```yaml
+Buildspec:
+```yaml
 version: 0.2
 
 phases:
@@ -130,8 +130,9 @@ phases:
 artifacts:
   files:
     - target/webservice-app.jar
-  discard-paths: yes  
-  ```
+  discard-paths: yes
+```  
+ 
 
 - CodePipeLine
   Controlls the source which, gets the build from codebuilder and deploys the project to AWS.
